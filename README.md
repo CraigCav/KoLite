@@ -91,7 +91,10 @@ isDirty = ko.computed(function () {
 dirtyFlag().reset()
 </pre>
 
+## Running the tests
 
+1. Open a command prompt in the `test` directory 
+2. run `phantomjs spec.js`
 
 ## Depends on
 &gt;= jQuery 1.4.4

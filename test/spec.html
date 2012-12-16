@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>    
+        <script type="text/javascript" src="jasmine-1.2.0.js"></script>
+        <script type="text/javascript" src="jasmine.console_reporter.js"></script>
+        <script type="text/javascript" src="knockout-2.2.0.js"></script>
+        <script type="text/javascript" src="require.js"></script>
+        <script type="text/javascript">
+            require.config({
+                paths: {
+                    asyncCommand:   '../knockout.asyncCommand',
+                    activity:       '../knockout.activity',
+                    dirtyFlag:      '../knockout.dirtyFlag'
+                },
+                shim: {
+                    asyncCommand:   { exports: 'ko' },
+                    activity:       { exports: 'ko' },
+                    dirtyFlag:      { exports: 'ko' }
+                }
+            });
+            var runTests = function (specfiles) {
+                require(specfiles, function () {
+                    var consoleReporter = new jasmine.ConsoleReporter();
+                    jasmine.getEnv().addReporter(consoleReporter);
+                    jasmine.getEnv().execute();
+                });
+            };
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
