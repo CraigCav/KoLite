@@ -11,7 +11,7 @@ page.onConsoleMessage = function(msg) {
 page.onLoadFinished = function () {
     page.evaluate(function (specFiles) {
         runTests(specFiles);
-    }, []);
+    }, ['specs/asyncCommand.spec']);
 };
 
 page.open('spec.html');
